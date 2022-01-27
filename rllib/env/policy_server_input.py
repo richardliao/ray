@@ -69,6 +69,7 @@ class PolicyServerInput(ThreadingMixIn, HTTPServer, InputReader):
         self.samples_queue = queue.Queue()
         self.metrics_queue = queue.Queue()
         self.idle_timeout = idle_timeout
+        self.daemon_threads = True
 
         def get_metrics():
             completed = []
